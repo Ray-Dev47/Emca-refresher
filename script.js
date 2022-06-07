@@ -49,6 +49,6 @@ let quest = parseInt(prompt('How many Miles?'));
 if(quest){
     let factor = quest * 1.60934
     // console.log(factor) // works
-    alert(`${quest} Miles is ${factor}`)     // also work
+    alert(`${quest} Miles is equal to ${factor} Kilometers`)     // also work
 }
 
