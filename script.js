@@ -59,7 +59,7 @@ num2--;  // 59
 let total = num1 + num2;
 console.log(total);    // 110;
 
-// Check if a number exist and also check if it is greater than 50
+//Challenge 3 Check if a number exist and also check if it is greater than 50
 
 let isCheck = prompt('Please enter a number');
 if(isCheck >= 50){
@@ -67,3 +67,14 @@ if(isCheck >= 50){
 }else{
     alert(`${isCheck} does not exist and is less than 50`)
 }
+
+// challenge 4 - check if a variable is odd or even, use modulus to determine output
+let numCheck = prompt(`Enter any value to check if even or odd`)
+if(numCheck  % 2 == 0){
+    alert(`${numCheck} is even`)
+} else{
+    alert(`${numCheck} is odd`)
+}
+
+// multiple conditionals
+
