@@ -45,12 +45,12 @@
 // + - * / % ** ++ -- 
 
 // Challenge 2 - Use prompt to ask the number of miles in a kilometer, output the prompt value in console
-let quest = parseInt(prompt('How many Miles?')); 
-if(quest){
-    let factor = quest * 1.60934
-    // console.log(factor) // works
-    alert(`${quest} Miles is equal to ${factor} Kilometers`)     // also work
-}
+// let quest = parseInt(prompt('How many Miles?')); 
+// if(quest){
+//     let factor = quest * 1.60934
+//     // console.log(factor) // works
+//     alert(`${quest} Miles is equal to ${factor} Kilometers`)     // also work
+// }
 
 let num1 = 50;
 let num2 = 60;
@@ -61,32 +61,32 @@ console.log(total);    // 110;
 
 //Challenge 3 Check if a number exist and also check if it is greater than 50
 
-let isCheck = prompt('Please enter a number');
-if(isCheck >= 50){
-    alert(`${isCheck} exist and is greater than 50`)
-}else{
-    alert(`${isCheck} does not exist and is less than 50`)
-}
+// let isCheck = prompt('Please enter a number');
+// if(isCheck >= 50){
+//     alert(`${isCheck} exist and is greater than 50`)
+// }else{
+//     alert(`${isCheck} does not exist and is less than 50`)
+// }
 
 // challenge 4 - check if a variable is odd or even, use modulus to determine output
-let numCheck = prompt(`Enter any value to check if even or odd`)
-if(numCheck  % 2 == 0){
-    alert(`${numCheck} is even`)
-} else{
-    alert(`${numCheck} is odd`)
-}
+// let numCheck = prompt(`Enter any value to check if even or odd`)
+// if(numCheck  % 2 == 0){
+//     alert(`${numCheck} is even`)
+// } else{
+//     alert(`${numCheck} is odd`)
+// }
 
 // multiple conditionals
 
 // challenge 5 - ask a via prompt, check if eligible to enter at 18+ , show a msg to allow or deny depending on the age using tenary operator, setup a membership boolean value and add second check to ensure the user is a member and output a message to them if they are or not allowing or denying entry.
 
-let ageCheck = prompt('Please enter your age to confirm eleigibility');
+// let ageCheck = prompt('Please enter your age to confirm eleigibility');
 
-if(ageCheck >= 18){
-    alert(`You are eligible`)
-} else{
-    alert(`You are not eligible`)
-}
+// if(ageCheck >= 18){
+//     alert(`You are eligible`)
+// } else{
+//     alert(`You are not eligible`)
+// }
 
 // 2.)
 let ageCheck2  = 18;
@@ -102,16 +102,37 @@ if(ageCheck2 >= 18){
 // challenge 5 - set a default time , create a messag to be output according to the time e.g: good morning, output the message in the console.
 
 // let defaultTime = 24;
-let whatisTime = prompt('What is the time?')
+// let whatisTime = prompt('What is the time?')
 
-if(whatisTime < 11){
-    console.log(`Good Morning`)
-} else if (whatisTime >= 12 && whatisTime < 18 ){
-    console.log(`Good afternoon`)
-} else if(whatisTime >= 18 && whatisTime <= 24){
-    console.log(`Good Evening`)
-} else{
-    console.log(`Invalid Time entered`)
-}
+// if(whatisTime < 11){
+//     console.log(`Good Morning`)
+// } else if (whatisTime >= 12 && whatisTime < 18 ){
+//     console.log(`Good afternoon`)
+// } else if(whatisTime >= 18 && whatisTime <= 24){
+//     console.log(`Good Evening`)
+// } else{
+//     console.log(`Invalid Time entered`)
+// }
 
 // functions - blocks of reusable codes thats performs a specific task or calculate a value
+
+// Challenge 7 - Create a function to output a message from a variable into the console, invoke the function 3 times everytime increasing the value of the global variable that counts the number of times the function runsa
+
+// Create a function to output into the console the results of adding 10 to a number that is passed into the function
+
+// 1.)
+let count = 1
+function myFunction(){
+    console.log(`Message outputed from a function`)
+    console.log(`${count++} times to run`)
+}
+
+myFunction();
+myFunction();
+myFunction();
+
+// 2.) 
+function funcAdd(a){
+    return a + 10
+}
+ console.log(funcAdd(20))  // 30
