@@ -139,5 +139,12 @@ function funcAdd(a){
 
 //  function parameters - they are arguments that gets passed in () when defining a function, can be single or multiple
 // function Arguments - are the values received when the func is invoked
- 
+//  3 different ways to create functions:
+function addition (numOne, numTwo = 30){
+     console.log('Number 1' + numOne);
+     console.log('Number 2' + numTwo);
+}
+console.log(addition(20,10));
+console.log(addition(20));
 
+// function return
