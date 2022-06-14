@@ -136,3 +136,8 @@ function funcAdd(a){
     return a + 10
 }
  console.log(funcAdd(20))  // 30
+
+//  function parameters - they are arguments that gets passed in () when defining a function, can be single or multiple
+// function Arguments - are the values received when the func is invoked
+ 
+
