@@ -18,3 +18,10 @@ function funcAdd(a){
     return a + 10
 }
  console.log(funcAdd(20))  // 30
+
+
+//  Create a function that multiples to values and returns the result
+function multiplyTast(a,b){
+     return a * b
+}
+console.log(multiplyTast(6,7));
