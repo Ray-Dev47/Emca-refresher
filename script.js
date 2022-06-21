@@ -140,8 +140,8 @@ function addition(numOne, numTwo = 30) {
 	console.log('Number 1' + numOne);
 	console.log('Number 2' + numTwo);
 }
-console.log(addition(20, 10));
-console.log(addition(20));
+// console.log(addition(20, 10));
+// console.log(addition(20));
 
 // function return
 
@@ -149,7 +149,7 @@ console.log(addition(20));
 function multiplyTast(a, b) {
 	return a * b;
 }
-console.log(multiplyTast(6, 7));
+// console.log(multiplyTast(6, 7));
 
 // function in HTML (done)
 
@@ -167,8 +167,8 @@ function testScope() {
 	let b = ' scope';
 	console.log(a + b);
 }
-testScope(); // works - bcos it is globally scoped
-console.log(b); // Uncaught ReferenceError: b is not defined ----> is is bcos b is locally scoped while a is globally scoped
+// testScope(); // works - bcos it is globally scoped
+// console.log(b); // Uncaught ReferenceError: b is not defined ----> is is bcos b is locally scoped while a is globally scoped
 
 // Function recursion - allows us create a quick loop of content, its a functions that calls itself within itself
 // challenge 8 --> Create a function that asks for a guess from the user. Use the guess value to compare to see if the user guessed correctly let them know if correct or incorrect . Bonus: Using a tenary operator to provide sugestion for the next guess when the user is wrong.
@@ -198,3 +198,28 @@ let rightGuess = 17;
 // }
 // guess()
 
+// -IIFE - functions that runs as soon as it is defined, it is a design pattern which is also known as a SELF-executing anonymous function and contains two major parts
+// It's a common JavaScript pattern that executes a function instantly after it's defined. Developers primarily use this pattern to ensure variables are only accessible within the scope of the defined function 
+
+(function(){
+    console.log('IIFE Test')
+})();
+
+// practical Sample
+let iifeTest = (function ageCalc(a,b) {
+      return a - b
+})(2022, 1990);
+console.log(iifeTest); // 32
+
+(function(x,y) {
+    return console.log(x + y);    
+})(10,5); // 15
+
+(function(a,b){
+    return console.log(a + b) ;
+})(10,20);
+
+// Challenge - Use IIFE to output your name in the console
+(function (firstName){
+    console.log(`My Name is ${firstName}`)
+})("Raymond")
