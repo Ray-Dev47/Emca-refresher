@@ -223,3 +223,27 @@ console.log(iifeTest); // 32
 (function (firstName){
     console.log(`My Name is ${firstName}`)
 })("Raymond")
+
+
+//  Arrow functions
+// normal
+let arrowTest = function(x){
+   return console.log('Ordinary function tesr to see if it works')
+}
+arrowTest()
+
+// Arrow function
+let arrowTest2 = () => {
+    console.log('Arrow Test')
+}
+arrowTest2()
+
+// calc test
+let ageCalc = function(c,d){
+    return d-c
+}
+console.log(ageCalc(1990,2022)) // 32
+
+// arrow func
+let ageCalc2 = (c,d) => d - c;
+console.log(ageCalc2(1990,2022)) // 32
