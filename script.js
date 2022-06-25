@@ -247,3 +247,20 @@ console.log(ageCalc(1990,2022)) // 32
 // arrow func
 let ageCalc2 = (c,d) => d - c;
 console.log(ageCalc2(1990,2022)) // 32
+
+
+// functions to create object
+function person(name, gender, race, age, isShort){
+    this.name = name;
+    this.gender = gender;
+    this.race = race;
+    this.age = age
+    this.isShort = isShort
+}
+
+let person1 = new person('Raymond', 'male', 'Black', 32, false);
+console.log(person1); // worked
+
+// more properties can be added
+person1.occupation = 'Software Developer';
+console.log(person1);
