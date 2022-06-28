@@ -94,3 +94,13 @@ function lenFilter2(isLess){
     return isLess.length < 6
 }
 console.log(words.filter(lenFilter2)) // ['spray', 'limit', 'elite']
+
+// 5.) Array.prototype.find()
+// The find() method returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.
+
+// to find elements greater than 7
+const arrFind = [2,5,6,34,7,8,5,3,7,9,56,7,20,10]
+function findGreaterthan7(isgreater){
+    return isgreater > 7
+}
+console.log(arrFind.filter(findGreaterthan7))  // [34, 8, 9, 56, 20, 10]
