@@ -104,3 +104,14 @@ function findGreaterthan7(isgreater){
     return isgreater > 7
 }
 console.log(arrFind.filter(findGreaterthan7))  // [34, 8, 9, 56, 20, 10]
+
+
+//6.) Array.prototype.findIndex()
+// The findIndex() method returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1, indicating that no element passed the test.
+// e.g Find the first element with a value over 18:
+
+const findIdxArr = [5, 12, 8, 130, 44];
+function isOver18(isOver){
+    return isOver > 18
+}
+console.log(findIdxArr.findIndex(isOver18));  // 3  (which is 12, 130, 44);
