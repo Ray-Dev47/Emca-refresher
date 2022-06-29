@@ -115,3 +115,12 @@ function isOver18(isOver){
     return isOver > 18
 }
 console.log(findIdxArr.findIndex(isOver18));  // 3  (which is 12, 130, 44);
+
+// 7. ) Array.prototype.flat()  (to flatten subarrays to one)
+// The flat() method creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+
+const arrFlat = [1,2,3,[4,5,6],[7,8]];
+console.log(arrFlat.flat())
+
+const arrFlat2 = [2,4,6,[[[7,9,10]]]];  // [1, 2, 3, 4, 5, 6, 7, 8]
+console.log(arrFlat2.flat(3))  // [2, 4, 6, 7, 9, 10]
