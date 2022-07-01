@@ -124,3 +124,63 @@ console.log(arrFlat.flat())
 
 const arrFlat2 = [2,4,6,[[[7,9,10]]]];  // [1, 2, 3, 4, 5, 6, 7, 8]
 console.log(arrFlat2.flat(3))  // [2, 4, 6, 7, 9, 10]
+
+
+// 8.) Array.prototype.flatMap()
+// The flatMap() method returns a new array formed by applying a given callback function to each element of the array, and then flattening the result by one level. It is identical to a map() followed by a flat() of depth 1 (arr.map(...args).flat()), but slightly more efficient than calling those two methods separately.
+const arrFlatMap = [1,3,4,6];
+console.log(arrFlatMap.flatMap(x => [x * 2]));  // [2, 6, 8, 12] , flat and map at the same time
+
+// 9.) Array.prototype.forEach()
+// The forEach() method executes a provided function once for each array element.
+// The forEach() method calls a function for each element in an array.
+// The forEach() method is not executed for empty elements.
+
+const arrForEach = ['r','a',1,'y'];
+function arrForEachTest(tests){
+    // return 
+    console.log(tests)
+}
+console.log(arrForEach.forEach(arrForEachTest))  // r a 1 y
+
+// 10.) Array.from()
+// The Array.from() static method creates a new, shallow-copied Array instance from an iterable or array-like object.
+const arrFrom = 'Ray'
+console.log(Array.from(arrFrom))  //  ['R', 'a', 'y'];
+
+
+// 11.) Array.prototype.includes()
+// The includes() method returns true if an array contains a specified value.
+// The includes() method returns false if the value is not found.
+// The includes() method is case sensitive.
+
+const arrIncludes = ['Ray','faith','Mike'];
+console.log(arrIncludes.includes('Ziru')) // false ----->  ziru is not part of Idengeli Family
+
+// 12.) Array.prototype.indexOf()
+// The indexOf() method returns the first index (or Position) at which a given element can be found in the array, or -1 if it is not present.
+
+const arrIndexOf = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+console.log(arrIndexOf.indexOf('limit')); // 1
+console.log(arrIndexOf.indexOf('exuberant'));  // 3
+console.log(arrIndexOf.indexOf('none'));  // -1
+
+// 13.) Array.isArray()
+// The Array.isArray() method determines whether the passed value is an Array.
+const isArrTest = [2,3,5];
+console.log(Array.isArray(isArrTest))  // true
+
+// 14.) Array.prototype.join()
+// The join() method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string. If the array has only one item, then that item will be returned without using the separator.
+
+const arrJoin1 = ['R','a','y'];
+const arrJoin2 = ['m','o','n','d'];
+const arrJoin = arrJoin1.join(); // R,a,y
+console.log(arrJoin);
+// add dash 
+console.log(arrJoin1.join('-')) //  R-a-y
+
+
+
+
+
