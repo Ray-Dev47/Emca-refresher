@@ -171,7 +171,7 @@ const isArrTest = [2,3,5];
 console.log(Array.isArray(isArrTest))  // true
 
 // 14.) Array.prototype.join()
-// The join() method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string. If the array has only one item, then that item will be returned without using the separator.
+// The join() method creates and returns a new string (Note) by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string. If the array has only one item, then that item will be returned without using the separator.
 
 const arrJoin1 = ['R','a','y'];
 const arrJoin2 = ['m','o','n','d'];
@@ -180,6 +180,40 @@ console.log(arrJoin);
 // add dash 
 console.log(arrJoin1.join('-')) //  R-a-y
 
+
+//15.) Array.prototype.keys() 
+// The keys() method returns a new Array Iterator object that contains the keys for each index in the array.
+const arrkeys = ['Ray', 'Lincoln', 'samuel', 'idengeli'];
+const iterate = arrkeys.keys();
+
+for (const key of iterate){
+    console.log(key)  // 
+}
+
+// expected output: 0
+// expected output: 1
+// expected output: 2
+// expected output: 4
+
+// 16.) Array.prototype.lastIndexOf()
+// returns the last index at which a given element can be found in the array or -1 if its not present. it is searched backwards 
+
+const arrFindLastIndex = ['rice', 'tea', 'okro', 'rice', 'yam'];
+console.log(arrFindLastIndex.lastIndexOf('rice'));  // 3  
+console.log(arrFindLastIndex.lastIndexOf('tea'))// 1
+
+// 17.) Array.prototype.map()
+// The map() method creates a new array populated with the results of calling a provided function on every element in the calling array.
+const arrMap = [1,2,3];
+const arrMapNew = arrMap.map(myFunc)
+
+function myFunc(z){
+    return z* 20
+}
+console.log(arrMapNew) // [20, 40, 60]'
+
+// Array.prototype.pop()  **** understood removes from the end 
+// Array.prototype.push()  **** understood The push() method adds one or more elements to the end of an array and returns the new length of the array.
 
 
 
