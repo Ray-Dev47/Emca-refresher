@@ -240,7 +240,46 @@ function IsEven(test){
 }
 console.log(arrSome.some(IsEven))// true
 
-Array.prototype.sort()
+// 21.)  Array.prototype.sort()
+// The sort() method sorts the elements of an array in place and returns the sorted array. The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.
+// The time and space complexity of the sort cannot be guaranteed as it depends on the implementation.
+
+const arrSort = ['elephant','ball','cat', 'dog','apple', ];
+console.log(arrSort.sort());  //  ['apple', 'ball', 'cat', 'dog', 'elephant'];
+console.log(arrSort.reverse()) // ['elephant', 'dog', 'cat', 'ball', 'apple']
 
 
+// 22.) Array.prototype.splice()
+// The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. To access part of an array without modifying it, see slice().
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+// inserts at index 1
+console.log(months);
+// expected output: Array ["Jan", "Feb", "March", "April", "June"]
 
+months.splice(4, 1, 'May');
+// replaces 1 element at index 4
+console.log(months);
+// expected output: Array ["Jan", "Feb", "March", "April", "May"]
+
+
+// 23.) Array.prototype.toLocaleString()
+// converts array to string
+const arrToString = ['Jan', 'March', 'April', 'June'];
+console.log(arrToString.toLocaleString());  // Jan,March,April,June
+
+// 24.) Array.prototype.unshift()
+// The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.
+
+// 25.) Array.prototype.values() ---> returns the arrayValues
+// The values() method returns a new array iterator object that contains the values for each index in the array.
+const arrValueOf = ["Banana", "Orange", "Apple", "Mango"];
+const arriterator = arrValueOf.values();
+
+for (const value of arriterator){
+    console.log(value)
+}
+// expected output: "Banana"
+// expected output: "Orange"
+// expected output: "Apple"
+// expected output: "Mango"
