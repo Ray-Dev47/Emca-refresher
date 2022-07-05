@@ -214,7 +214,33 @@ console.log(arrMapNew) // [20, 40, 60]'
 
 // Array.prototype.pop()  **** understood removes from the end 
 // Array.prototype.push()  **** understood The push() method adds one or more elements to the end of an array and returns the new length of the array.
+// Array.prototype.shift() **** understood removes first element
 
+// 18.) Array.prototype.reverse()
+// The reverse() method reverses an array in place. The first array element becomes the last, and the last array element becomes the first.
+
+const arrReverse = ['one','two','three','four'];
+console.log(arrReverse.reverse()) //  ['four', 'three', 'two', 'one']
+
+// 19.)  Array.prototype.slice()
+// The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included) where start and end represent the index of items in that array. The original array will not be modified.
+const arrSplice = ['army','police','navy', 'air force', 'NSCDC']
+console.log(arrSplice.slice(2))// ['navy', 'air force', 'NSCDC']
+console.log(arrSplice.slice(3))  //  ['air force', 'NSCDC']
+console.log(arrSplice.slice(1,-2)) // ['police', 'navy']
+
+
+// 20.) Array.prototype.some()
+// The some() method tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array.
+
+// e.g check if an element is even
+let arrSome = [1,2,3,3,4,5,5,6,7,8];
+function IsEven(test){
+    return test % 2 === 0
+}
+console.log(arrSome.some(IsEven))// true
+
+Array.prototype.sort()
 
 
 
