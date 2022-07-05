@@ -552,3 +552,25 @@ for (const value of arriterator){
 // expected output: "Mango"
 
 
+// extra filter challenge
+// use filter to create a new array with numbers greater than 75 and output in console
+const arrFilter = [77,44,2,162,18,244,];
+function fiterCheck(isOver75){
+    return isOver75 > 75
+}
+console.log(arrFilter.filter(fiterCheck)); // [77, 162, 244]
+
+
+
+// Loops 
+// for statement
+// A for loop repeats until a specified condition evaluates to false. 
+// for ([initialExpression]; [conditionExpression]; [incrementExpression])
+//   statement
+for(idx = 0; idx <= 10; idx++){
+    if(idx === 5){
+        console.log("Break at 5");
+        break;   // 1 to 4, stop and break
+    }
+    console.log(idx); // counts 0 -10
+}
