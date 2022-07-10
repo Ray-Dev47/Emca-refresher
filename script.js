@@ -574,3 +574,54 @@ for(idx = 0; idx <= 10; idx++){
     }
     console.log(idx); // counts 0 -10
 }
+
+
+// create an array that contains objects created dynamically using a loop. output the content into the console
+// const i = [{}]
+for(i = 1; i <= 9; i++){
+    let status = "";
+     if(i % 2 === 1){
+        status = true
+     } else {
+        status = false
+     }
+    console.log([`Name: "Lesson ${i}", status: ${status}`])  // works but not as array object
+}
+
+// correction
+const myCorrection = [];
+for(idx = 0; idx <= 9; idx++){
+    let stat = idx%2 ? true : false;
+    let temp = {name: `Lesson ${idx}`, status:stat};
+    myCorrection.push(temp)
+}
+console.log(myCorrection)
+
+// 2 - Use filter to create a new array with the only items that have a value of true
+
+// function filterTrue(){
+//     return myCorrection === "true"
+// }
+// console.log(Correction.filter(filterTrue));
+const newFilter = myCorrection.filter(function (el){
+    return el.status === true
+})
+console.log(newFilter)  // correct!!
+
+
+// Loop object and array data
+
+const myName = ['Raymond'];
+function forEachTest(tryIt){
+  console.log(tryIt)
+}
+console.log(myName.forEach(forEachTest)) // Raymond
+
+// Extra
+// Build a new array of values from existing that have all the numbers multiplied by 50.
+// ** Use map to return values of array items that are objects using the previous array of lessons 
+const arrTask1 = [1,2,4,5];
+function arrtimes(para) {
+    return para * 50
+}
+console.log(arrTask1.map(arrtimes)); // [50, 100, 200, 250]
