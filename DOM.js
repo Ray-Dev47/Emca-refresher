@@ -82,3 +82,50 @@ linkTry.forEach(function(el){
     el.setAttribute('href', 'http://google.com')  // works, routes to google when clicked
 })
 // console.log(linkTry())
+
+
+
+// Element Classses
+// Here we can: replace , remove, toggle & add classes
+// Check if class exist in classList of element
+
+// Element.classList
+// The Element.classList is a read-only property that returns a live DOMTokenList collection of the class attributes of the element. This can then be used to manipulate the class list.
+let tag = document.createElement('h1');
+tag.className = 'header1';   // adds a classname
+tag.innerText = 'Header 1'
+console.log(tag.outerHTML); // <h1 class="header1">Header 1</h1>
+
+// to remove and add classname
+tag.classList.remove('header1');
+tag.classList.add('headerOne')  // changed
+console.log(tag.outerHTML);  // <h1 class="headerOne">Header 1</h1>
+
+
+//  to toggle (btn event listener can be used to achieve this)
+tag.classList.toggle('headerOneToggle');
+console.log(tag.outerHTML);  // <h1 class="headerOne headerOneToggle">Header 1</h1>
+
+// to check a class exist in classList of element
+console.log(tag.classList.contains("headerOne"));  // true
+
+
+// to add multiple classses
+tag.classList.add('one','two','three')
+console.log(tag)
+
+// to remove multiple classes, use same method as above
+
+// to replace classes
+tag.classList.replace('one','one1')
+console.log(tag)
+
+//add or remove multiple classes using spread syntax
+const spreadTest = ['val1','val2','val3']
+tag.classList.add(...spreadTest)
+console.log(tag);
+tag.classList.remove(...spreadTest);
+
+
+// element children and traversing
+
