@@ -191,5 +191,28 @@ rayDiv.style.color = '#fff';
 rayDiv.style.padding = '30px'
 let rayContent = document.createTextNode('Create content example 2');
 
-let totalRay = rayDiv.appendChild(rayContent)
-document.body.appendChild(rayDiv)
+let totalRay = rayDiv.appendChild(rayContent);
+document.body.appendChild(rayDiv);
+
+
+// Event listeners
+// The addEventListener() sets up a function that will be called whenever the specified event is delivered to the target.
+// We also have remove listener  removeEventListener();
+
+const eventTest = document.getElementById('testID');
+eventTest.style.cursor = "pointer";
+eventTest.addEventListener('click', function(){
+	console.log('Event H1 Clicked!!')
+})
+
+// another way is to invoke a function and call it
+eventTest.addEventListener('click', myFunc);
+
+function myFunc(){
+	console.log('method 2')
+}
+
+// we can analyze the different event we have in the console for h1 above, 
+console.dir(eventTest) // options for different events is shown here.
+
+
