@@ -174,14 +174,14 @@ styleTask.style.border = '5px dotted red';
 // e.g to create a new <div> and inserts it before the element with the ID "div1".
 
 let newDiv = document.createElement('div');
-let content =  document.createTextNode('Hello this is a content created here');
-let combineAll = newDiv.appendChild(content);
+// let content =  document.createTextNode('Hello this is a content created here');
+// let combineAll = newDiv.appendChild(content);
 
 // now to add to DOM 
 let currentDiv = document.getElementById('div1')
 document.body.insertBefore(newDiv, currentDiv)
 
-console.log(combineAll)
+// console.log(combineAll)
 
 // Another sample
 let rayDiv = document.createElement('div')
@@ -189,9 +189,9 @@ rayDiv.id = 'ray'
 rayDiv.style.backgroundColor = 'crimson'
 rayDiv.style.color = '#fff';
 rayDiv.style.padding = '30px'
-let rayContent = document.createTextNode('Create content example 2');
+// let rayContent = document.createTextNode('Create content example 2');
 
-let totalRay = rayDiv.appendChild(rayContent);
+// let totalRay = rayDiv.appendChild(rayContent);
 document.body.appendChild(rayDiv);
 
 
@@ -207,7 +207,6 @@ eventTest.addEventListener('click', function(){
 
 // another way is to invoke a function and call it
 eventTest.addEventListener('click', myFunc);
-
 function myFunc(){
 	console.log('method 2')
 }
@@ -215,4 +214,49 @@ function myFunc(){
 // we can analyze the different event we have in the console for h1 above, 
 console.dir(eventTest) // options for different events is shown here.
 
+
+// Challenge 1 --> Add the ability to click on elements with class = listItem and toggle the class red to the element 
+let addClass = document.querySelectorAll('.listItem');
+
+for(let i = 0; i < addClass.length; i++){
+	addClass[i].style.cursor = "pointer";
+	addClass[i].addEventListener('click', function(){	
+		addClass[i].classList.toggle('red')
+	})
+}
+
+
+// DOM challenge 2  - Image popup
+// add a popup image when any image on the page is clicked. popup should show the full size image from the web link
+
+const imgOne = document.getElementById('img-1');
+const imgTwo = document.getElementById('img-2');
+const imgThree = document.getElementById('img-3');
+const btnOne = document.getElementById('btn_1');
+const btnTwo = document.getElementById('btn_2');
+const btnThree = document.getElementById('btn_3');
+
+btnOne.addEventListener('click', function() {
+	if(imgOne.style.width === "100px"){
+		imgOne.style.width = "500px"
+	} else{
+		imgOne.style.width = "100px"
+	}
+})
+btnTwo.addEventListener('click', function() {
+	if(imgTwo.style.width === "100px"){
+		imgTwo.style.width = "500px"
+	} else{
+		imgTwo.style.width = "100px"
+	}
+})
+btnThree.addEventListener('click', function() {
+	if(imgThree.style.width === "100px"){
+		imgThree.style.width = "500px"
+	} else{
+		imgThree.style.width = "100px"
+	}
+})
+
+// correction
 
