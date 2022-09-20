@@ -259,4 +259,35 @@ btnThree.addEventListener('click', function() {
 })
 
 // correction
+// const imgList = document.querySelectorAll('img');
+// for(let i = 0; i < imgList.length; i++){
+// 	imgList[i].addEventListener('click', function(){
+// 		console.log(this.src);
+// 		window.open(this.src,"myImage","resizable=yes,width=500,height=500");
+// 	});
+// }
 
+
+
+// Challenge-two - list Item
+// Show a list of items and give the ability to add new items to the list by submitting content from an input form.
+// Bonus - if you check that the input field has content with length of more than 3 characters.
+// You can use this HTML starter code
+let ul = document.getElementById('listParent');
+console.log(ul)
+
+let textArea = document.getElementById('textArea')
+var submit = document.getElementById('submit');
+
+
+submit.addEventListener('click', function(e){
+	let value = textArea.value
+	var li = document.createElement('li');
+	// let value = event.target.value
+	li.textContent = value;
+	ul.appendChild(li);
+	
+	console.log('clicked')
+	e.preventDefault();
+	textArea.value = '';
+});
