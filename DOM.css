@@ -6,3 +6,9 @@
 #pop-challenge{
     padding: 3rem;
 }
+
+.randColor{
+    padding: 15px 20px;
+    border: 2px solid black;
+    text-align: center;
+}

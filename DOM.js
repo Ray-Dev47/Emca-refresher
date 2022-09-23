@@ -274,20 +274,65 @@ btnThree.addEventListener('click', function() {
 // Bonus - if you check that the input field has content with length of more than 3 characters.
 // You can use this HTML starter code
 let ul = document.getElementById('listParent');
-console.log(ul)
-
 let textArea = document.getElementById('textArea')
-var submit = document.getElementById('submit');
+let submit = document.getElementById('submit');
 
 
 submit.addEventListener('click', function(e){
 	let value = textArea.value
-	var li = document.createElement('li');
+	let li = document.createElement('li');
 	// let value = event.target.value
 	li.textContent = value;
 	ul.appendChild(li);
 	
-	console.log('clicked')
-	e.preventDefault();
 	textArea.value = '';
+	e.preventDefault();
+	if(value == ''){
+		alert('empty field!, please input something')
+		ul.removeChild(li);
+		return false;
+	} else{
+		return true
+	}
+	// if(value.length >= 3){
+	// 	alert('greater than 3 character entered')
+	// }
 });
+
+// tutorial correction
+// const mainList = document.querySelector('ul');
+// const inputEl = document.querySelector('input');
+// const clicker = document.querySelector('button');
+
+// clicker.addEventListener('click', function(){
+// 	if(textTemp.value >= 3){
+// 		let li = document.createElement(li);
+// 		let textTemp = document.createTextNode(inputEl.value);
+// 		li.appendChild(textTemp);
+// 		mainList.appendChild(li);
+// 	}
+// })
+
+
+// Project next - Random color changer
+// add a button that will change the body background 
+const bgBtn = document.getElementById('bgBtn');
+let randColor = document.querySelector('.randColor');
+
+bgBtn.addEventListener('click', function(){
+	// let colorChange = ['red','blue', 'yellow','crimson','gray','purple']
+	// let oneColor = colorChange[Math.floor(Math.random()* colorChange.length)]
+	// 	randColor.style.backgroundColor = oneColor   // worked!!!
+
+	// to try hex code
+	const randomHexColorGenerator = () => {
+		let hexColor = (Math.random() * 0xfffff * 1000000).toString(16);
+		return '#' + hexColor.slice(0,6);
+
+	}
+	document.body.style.backgroundColor = randomHexColorGenerator() // worked
+	
+
+
+})
+
