@@ -367,3 +367,57 @@ keyEvent.addEventListener('keydown', function(e){
 	console.log(e.key, e.keyCode)
 	// console.log(e.keyCode);
 })
+
+
+// Mouse Events
+// Are fired when a pointing device is moved onto the element that has the listener attached or onto one of its children
+
+// The mouseout event fired when a pointing device(usually a mouse) is moved off the element that as the listener attached or off its children.
+
+// Self challenge
+
+// const mouseHead = document.getElementsByClassName('mouseHead, li')
+// console.log(mouseHead)
+
+const mouseHover = document.querySelector('.mouseHead')
+console.log(mouseHover) 
+
+mouseHover.addEventListener('mouseleave', function(){
+	// mouseHover.appendChild(li)
+	console.log(mouseHover.style.backgroundColor = 'red', 'mouse moved')  // understood
+	// for(let idx = 0; idx < mouseHover.length; idx++){
+		
+	// }
+
+	// e.target.style.backgroundColor = 'red'
+})
+// other events we have are: mousedown, mouseup,mousemove,mouseover, mouseout,mouseenter,mouseleave
+
+
+// Mouse Challenge - Highlight list item to red text color when mouse is hovered on the list item. Remove the highlight once off.
+// challenge completed via codepen
+{/* <ul>
+        <li>My Item 1</li>
+        <li>Another Item</li>
+        <li>My Item 2</li>
+        <li>My Item 3</li>
+    </ul> */}
+
+	// .red{
+	// 	color: blue;
+	//   }
+
+// 	const list = document.querySelectorAll('li');
+//  for(let i = 0; i < list.length; i++){  
+//    list[i].style.cursor = "pointer";
+//      list[i].addEventListener('mouseover', function(){
+//        // this.style.backgroundColor = 'red'
+//        list[i].classList.add('red')
+// 	   list[i].addEventListener('mouseout', function(){
+//          list[i].classList.remove("red")
+//      } ) 
+// }) 
+//    } 
+ 
+
+
