@@ -331,8 +331,39 @@ bgBtn.addEventListener('click', function(){
 
 	}
 	document.body.style.backgroundColor = randomHexColorGenerator() // worked
-	
-
-
+	randColor.style.backgroundColor = randomHexColorGenerator() // worked
 })
 
+
+
+// EVENT OBJECT
+// All event objects in the DOM are based on the Event Object. e.g. mouseEvent and keyboardEvent have access/belong to their mouseEvent object and keyboardEvent objects.
+
+// JS Click event object
+// The target property of the event interface is a reference to the object that dispatched the event  ....e.g the e.target
+document.querySelector("div ").addEventListener('click', function(e){
+	console.log(e)
+	console.log(e.type)
+	console.log(e.target)
+}) 
+
+const eventObject = document.getElementById('eventObject')
+eventObject.addEventListener('click', function(eventTest){
+	console.dir(eventTest)  // shows pointer event and the various methods available
+	// console.log(eventTest.target) 
+	// console.log(eventTest.target) 
+})
+
+
+
+
+// ************* KEYPRESS EVENT *******************
+// keypress challenge -- 
+// Add a key event listener for arrow key presses and outputting it into an element along with the keycode in ()
+const keyEvent = document.getElementById('keyEvent')
+keyEvent.addEventListener('keydown', function(e){
+	// console.log('key pressed')
+	// console.log(e)
+	console.log(e.key, e.keyCode)
+	// console.log(e.keyCode);
+})
