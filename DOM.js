@@ -276,17 +276,21 @@ btnThree.addEventListener('click', function() {
 let ul = document.getElementById('listParent');
 let textArea = document.getElementById('textArea')
 let submit = document.getElementById('submit');
+var addButton=document.getElementsByTagName("button")[0]
+console.log(addButton)
 
 
-submit.addEventListener('click', function(e){
+submit.addEventListener('click', function(){
 	let value = textArea.value
 	let li = document.createElement('li');
+	let editButton=document.createElement("button");
 	// let value = event.target.value
 	li.textContent = value;
+	li.appendChild(editButton)
 	ul.appendChild(li);
 	
 	textArea.value = '';
-	e.preventDefault();
+	// e.preventDefault();
 	if(value == ''){
 		alert('empty field!, please input something')
 		ul.removeChild(li);
@@ -298,6 +302,112 @@ submit.addEventListener('click', function(e){
 	// 	alert('greater than 3 character entered')
 	// }
 });
+
+// Challenge - list items advanced
+// add to list items 
+// Make existing items click and toggle line strike
+// add x to item to allow for removal from the list   **starter code provided**
+let advList = document.getElementById('advList');
+let advInput = document.getElementById('advInput');
+// let delItem = document.getElementById('advList').querySelectorAll('.remove')
+// console.log(delItem)
+// let advBtn = document.getElementById('advBtn');
+
+
+// adding button if i like
+// advBtn.addEventListener('click', function(){
+	// console.log('clicked')
+	// let advValue = advInput.value
+	// let advLi = document.createElement('li');	
+	// advLi.textContent = advValue ;
+	// advList.appendChild(advLi);
+    // advInput.value = ''
+
+// })
+
+
+let eachList = document.getElementById('advList').getElementsByTagName('li')
+for(let idx = 0; idx < eachList.length; idx++){
+	eachList[idx].style.cursor = 'pointer'
+	eachList[idx].style.padding = '10px'
+
+    eachList[idx].addEventListener('click', function myToggle(){
+		// eachList[idx].classList.toggle('adv-css')
+		// or below
+		// this.classList.toggle('adv-css');
+		let toggleClass = this.classList.toggle('adv-css');
+		if(toggleClass){
+			let span = document.createElement('span')
+			span.textContent = '    X'
+			span.addEventListener('click', function(){
+				this.parentElement.remove() 
+			})
+			this.appendChild(span) 
+		}else{
+			this.getElementsByTagName('span')[0].remove()
+		}
+	
+	})
+	
+}
+
+
+
+advInput.addEventListener('keypress', function(e){
+	// console.log(e.key, e.keyCode, 'pressed')
+	if(e.keyCode === 13){
+		let advValue = advInput.value
+		if(advValue === ''){
+			alert('empty field!!')
+		} else{
+			let advLi = document.createElement('li');	
+			advLi.textContent = advValue ;
+			advList.appendChild(advLi);
+			advInput.value = ''
+			let eachList = document.getElementById('advList').getElementsByTagName('li')
+			for(let idx = 0; idx < eachList.length; idx++){
+				if(advValue !== ''){
+					eachList[idx].style.cursor = 'pointer'
+				    eachList[idx].style.padding = '10px'
+
+					eachList[idx].addEventListener('click', function(){
+						// eachList[idx].classList.toggle('adv-css')
+						let toggleClass = this.classList.toggle('adv-css');
+		if(toggleClass){
+			let span = document.createElement('span')
+			span.textContent = '    X'
+			span.addEventListener('click', function(){
+				this.parentElement.remove() 
+			})
+			this.appendChild(span) 
+		}else{
+			this.getElementsByTagName('span')[0].remove()
+		}
+	
+					})
+
+				}
+				
+			}
+		  }
+	
+	} 
+})
+
+
+// tutorial correction
+
+
+
+
+
+
+
+
+
+
+
+
 
 // tutorial correction
 // const mainList = document.querySelector('ul');
@@ -380,7 +490,7 @@ keyEvent.addEventListener('keydown', function(e){
 // console.log(mouseHead)
 
 const mouseHover = document.querySelector('.mouseHead')
-console.log(mouseHover) 
+// console.log(mouseHover) 
 
 mouseHover.addEventListener('mouseleave', function(){
 	// mouseHover.appendChild(li)
@@ -419,5 +529,8 @@ mouseHover.addEventListener('mouseleave', function(){
 // }) 
 //    } 
  
+
+
+
 
 

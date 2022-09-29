@@ -12,3 +12,17 @@
     border: 2px solid black;
     text-align: center;
 }
+
+
+/* adv list css */
+.adv-css{
+    background-color: #eee;
+    color: red;
+    text-decoration: line-through;
+    /* background-image: url("https://res.cloudinary.com/sbullkoft/image/upload/v1481411917/delete-128_wxp3a5.png");
+	background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between; */
+}
+
