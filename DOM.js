@@ -528,7 +528,257 @@ mouseHover.addEventListener('mouseleave', function(){
 //      } ) 
 // }) 
 //    } 
- 
+
+
+// EVENT BUBBLING AND CAPTURING
+// can be useful when you have two events on the same elements 
+// it is needed when an event occurs in an element inside another element, and both elements have registered a handle for that event.
+// with bubbling, the event is first captured and handled by the innermost element and then propagated to outer elements.
+// with capturing, the event is first captured by the outermost element and propagated to the inner elements.
+
+// We can use the addEventListener(type,listener,useCapture) to register event handlers for in either bubbling (default) or capturing mode. To use the capturing model pass the third arguement as true.
+
+
+
+
+
+
+// Almost all events bubble.-----> 
+// Event bubbling is a method of event propagation in the HTML DOM API when an event is in an element inside another element, and both elements have registered a handle to that event.
+// When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.
+// Let’s say we have 3 nested elements FORM > DIV > P with a handler on each of them:
+// read  more on MDN
+
+
+
+// Useful JS methods and code snippets
+
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX       1.) Number Methods:     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+// Number is a JS type and primitive wrapper object used to represent and manipulate numbers like 37 or -9.25.
+// in numbers we look at parseInt, tofixed and Number to convert variables to number
+// e.g
+let myNum = 100.4565;
+let myNum2 = "200";
+// to roundoff myNum to 2 deceimal places and to convert myNum2 to number
+console.log(myNum.toFixed(2));  // 100.46
+
+// to convert string to number
+console.log(parseInt(myNum2))  // 200 
+// or
+console.log(Number('350'))  // 350
+
+// **** Number.isFinite()  -- checks if number passed is a finite number(i.e can be measured)
+console.log(Number.isFinite(2/0))// false
+console.log(Number.isFinite(4/2))// true cos it can be measured
+
+//******* */ Number.isInteger() -- checks if number passed is an integer (Note intergers are whole numbers without decimals or fractions)
+function testIfInteger(x,y){
+	 let ans = x/y
+	if(Number.isInteger(ans)){
+		return 'Yes it is an integer'
+	}else{
+		return 'It is not an integer'
+	}
+}
+console.log(testIfInteger(3.5,3))  // its not an integer
+
+
+//******* */ Number.isNaN() - determines whether the passed value is NaN and its type is Number, it is a more robust version of isNaN()
+function testifNAN(x){
+	if(Number.isNaN(x)){
+		return `${x} is NAN`
+	}
+	else{
+		return `${x} is not NAN`
+	}
+}
+console.log(testifNAN('100E'))
+console.log(testifNAN(NaN))
+
+
+
+
+
+// ******** Number.isSafeInteger() -checks whether the provided value is a number that is a safe integer
+// The safe integers consist of all integers from -(253 - 1) to 253 - 1, inclusive (±9,007,199,254,740,991). A safe integer is an integer that:
+// can be exactly represented as an IEEE-754 double precision number, and
+// whose IEEE-754 representation cannot be the result of rounding any other integer to fit the IEEE-754 representation.
+// For example, 253 - 1 is a safe integer: it can be exactly represented, and no other integer rounds to it under any IEEE-754 rounding mode. In contrast, 253 is not a safe integer: it can be exactly represented in IEEE-754, but the integer 253 + 1 can't be directly represented in IEEE-754 but instead rounds to 253 under round-to-nearest and round-to-zero rounding.
+console.log(Number.isSafeInteger(5)) // true
+console.log(Number.isSafeInteger(5.567 *45)) // true
+
+
+// ********** Number.parseFloat()  - method parses an argument and returns a floating point number. If a number cannot be parsed from the argument, it returns NaN
+function circumference(r) {
+  if (Number.isNaN(Number.parseFloat(r))) {
+    return 0;
+  }
+  return parseFloat(r) * 2.0 * Math.PI ;
+}
+
+console.log(circumference('4.567abcdefgh'));
+// expected output: 28.695307297889173
+
+console.log(circumference('abcdefgh'));
+// expected output: 0
+
+
+// *************** Number.parseInt() - Number.parseInt() method parses a string argument and returns an integer of the specified radix or base.
+function testParseInt(x,base){
+	const parsedAns = Number.parseInt(x,base);
+	if(Number.isNaN(parsedAns)){
+		return 0;
+	} else{
+		return parsedAns * 20
+	}
+} 
+console.log(testParseInt('0xF', 4))  // 0
+console.log(testParseInt('14', 4)) //20
+
+
+// Number.prototype.toExponential()  -- The toExponential() method returns a string representing the Number object in exponential notation.
+function expo(x, f) {
+	return Number.parseFloat(x).toExponential(f);
+  }
+  console.log(expo(123456, 2));
+  // expected output: "1.23e+5"
+  console.log(expo('123456'));
+  // expected output: "1.23456e+5"
+  console.log(expo('oink'));
+  // expected output: "NaN"
+  
+// Number.prototype.toFixed()- this method formats a number using fixed-point notation. (works like rounding off decemals)
+let testRay = 56.789645
+console.log(testRay.toFixed(2)) //56.79
+function testToFixed(x){
+	return Number.parseFloat(x).toFixed(3)
+}
+console.log(testToFixed(123.7889)) // 123.789
+
+
+// ***** toLocaleString() is a Number method that is used to convert a number into a locale-specific numeric representation of the number (rounding the result where necessary) and return its value as a string. note: the locales differ by countries
+const testLocaleString = 232000;
+console.log(testLocaleString.toLocaleString())   // 232,000
+
+const d = new Date();
+let text = d.toLocaleString();
+console.log(text)   // 10/3/2022, 2:28:40 PM
+
+// number.toPrecision() --  method returns a string representing the Number object to the specified precision.
+function testPrecitionTest(x){
+	return x.toPrecision(4)
+}
+console.log(testPrecitionTest(2345.7789))// 2346
+
+
+
+// Number.prototype.toString() -- The toString() method returns a string representing the specified Number object.
+function hexColour(c) {
+	if (c < 256) {
+	  return Math.abs(c).toString(16);
+	}
+	return 0;
+  }
+  console.log(hexColour(233));
+  // expected output: "e9"
+  console.log(hexColour('11'));
+
+//   Number.prototype.valueOf()  -- The valueOf() method returns the wrapped primitive value of a Number object.
+const numObj = new Number(42);
+console.log(typeof numObj);
+// expected output: "object"
+
+const num = numObj.valueOf();
+console.log(num);
+// expected output: 42
+
+console.log(typeof num);
+// expected output: "number"
+
+
+
+// JS STRING METHODS -string object is Used to 
+// String.prototype.trim() - this method removes white space from a string and returns a new string without modifying the original string. Whitespace in this context is all the whitespace characters (space, tab, no-break space, etc.) and all the line terminator characters (LF, CR, etc.).
+
+const twuale = '    boss i hail     ';
+console.log(twuale) // returns a space
+console.log(twuale.trim()); // works 
+
+
+// String.prototype.toLocaleUpperCase() -- The toLocaleUpperCase() method returns the calling string value converted to upper case, according to any locale-specific case mappings.
+const testUpper = 'testupper';
+console.log(testUpper.toLocaleUpperCase())  // TESTUPPER
+
+// The toLocaleLowerCase() method returns the calling string value converted to lower case, according to any locale-specific case mappings.
+const testLower = 'TESTLOWER';
+console.log(testLower.toLocaleLowerCase())  // testlower
+
+// string.prototype.split() -- this takes a pattern and divides a string into an ordered list of substrings by searching for the pattern, puts these substrings into an array and returns the array
+const testSplit = 'The quick brown fox jumps over a lazy dog';
+// to get a single word
+const word = testSplit.split(' ');
+console.log(word[4])//  jumps
+console.log(word[2])//  brown
+
+// to get a single character e.g 'w'    // note space is counted too
+const chars = testSplit.split('');
+console.log(chars[13])    // w -correct!!
+//  to copy to testSplit into another variable
+const newSplit = testSplit.split()
+console.log(newSplit);   // 'The quick brown fox jumps over a lazy dog'
+
+// syntax
+// split()
+// split(separator)
+// split(separator, limit)
+
+const monthString = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec";
+const newMonth =  monthString.split(" ")
+console.log(newMonth)  // ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+let text2 = "How are you doing today?";
+const myArray = text2.split(" ");  
+console.log(myArray) // ['How', 'are', 'you', 'doing', 'today?']
+
+
+// ******** String.prototype.slice() - extracts a certian section of the string and returns a new one without modifying the original string.
+const testSlice = 'armagedon'
+const newSlice = testSlice.slice(4)
+console.log(newSlice)  // gedon
+console.log(text2.slice(3,15)); // are you doi
+
+
+//  ****************** String.prototype.replace() -replace a new string with one, some or all matches of a pattern replaced by a replacement or new one.
+// The pattern can be a string or a RegExp, and the replacement can be a string or a function called for each match. If pattern is a string, only the first occurrence will be replaced. The original string is left unchanged.
+const testReplace = 'Raymond is a boy'
+console.log(testReplace.replace('boy', 'man'))   // Raymond is a man
+
+
+// ********* String.prototype.lastIndexOf() - this methods searches the entire string and returns the index of th LAST occurence of the specified substring.
+const testLastIndex = 'If he say na fine boy him be, then na fine boy him be na';
+let searchParam = 'boy'
+console.log(`the last index wey ${searchParam} appear from the end na ${testLastIndex.lastIndexOf(searchParam)}`);
+// output: the last index wey boy appear from the end na 43.
+
+// noted that they are zero indexed:                 also it is also case sensitive.
+// 'canal'.lastIndexOf('a');     // returns 3
+// 'canal'.lastIndexOf('a', 2);  // returns 1
+// 'canal'.lastIndexOf('a', 0);  // returns -1
+// 'canal'.lastIndexOf('x');     // returns -1
+// 'canal'.lastIndexOf('c', -5); // returns 0
+// 'canal'.lastIndexOf('c', 0);  // returns 0
+
+
+// ********** String.prototype.indexOf() ---  searches the entire string and returns the index of th FIRST occurence of the specified substring.
+console.log(`the last index wey ${searchParam} appear from the end na ${testLastIndex.indexOf(searchParam)}`);
+// output: the last index wey boy appear from the end na 18.
+
+// there are tons of other string method on MDN
+
+
+
+
+
 
 
 

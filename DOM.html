@@ -124,6 +124,18 @@
      </ul>
      <input id="advInput" type="text" placeholder="Type press & enter button"> 
      <!-- <button id="advBtn">Add</button> -->
+
+     <!-- event bubbling and capturing -->
+     <h2>Event bubbling and capturing</h2>
+     <form onclick="alert('form')">FORM
+    <div onclick="alert('div')">DIV
+      <p onclick="alert('p')">P</p>
+    </div>
+    </form>
+
+    <h2>Event bubbling and capturing 2</h2>
+    <div>1 <div>2 <div>3 <div>4 <div>5</div></div></div></div></div>
+    <section id="EventOutput"></section>
     
     <!-- <script>
         window.open(this.scr)
