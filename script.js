@@ -47,6 +47,7 @@
 //     alert(`${quest} Miles is equal to ${factor} Kilometers`)     // also work
 // }
 
+// counter data type
 let num1 = 50;
 let num2 = 60;
 num1++; // 51
